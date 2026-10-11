@@ -1,11 +1,11 @@
 :root {
-  --ink: #1d2b4f;
-  --muted: #5d6d8c;
-  --line: #d5e4fb;
-  --blue: #2f6bff;
-  --blue-soft: #e7f0ff;
-  --sun: #ffd65c;
-  --paper: #fffdf8;
+  --ink: #243044;
+  --muted: #5e6b7a;
+  --line: #d5e0e8;
+  --blue: #2a6f8f;
+  --blue-soft: #eef5f8;
+  --paper: #fbfcfd;
+  --hand: "Gveret Levin", Caveat, "Segoe UI", sans-serif;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -13,11 +13,11 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: Fredoka, Arial, sans-serif;
+  font-family: var(--hand);
   background:
-    radial-gradient(circle at 12% 10%, rgba(120,190,255,.45), transparent 32%),
-    radial-gradient(circle at 88% 0%, rgba(255,214,92,.55), transparent 28%),
-    linear-gradient(180deg, #f4f9ff, #fff8ea);
+    radial-gradient(circle at 12% 8%, rgba(90, 160, 190, .28), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(168, 140, 120, .16), transparent 28%),
+    linear-gradient(180deg, #eef4f7, #f6f3ef);
 }
 main {
   width: min(680px, calc(100% - 32px));
@@ -26,20 +26,20 @@ main {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 28px;
-  box-shadow: 0 18px 50px rgba(47, 107, 255, .08);
+  box-shadow: 0 18px 50px rgba(36, 48, 68, .08);
 }
 .lang {
   display: inline-block;
   margin-bottom: 14px;
   color: var(--blue);
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   text-decoration: none;
 }
 h1, .lede, .drop span, .note { text-wrap: balance; }
-h1 { margin: 0 0 8px; font-size: 40px; line-height: 1.15; }
-.lede { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.45; }
-ul { margin: 22px 0 0; padding: 0 18px 0 0; font-size: 18px; }
+h1 { margin: 0 0 8px; font-size: 52px; font-weight: 400; line-height: 1.15; }
+.lede { margin: 0; color: var(--muted); font-size: 26px; line-height: 1.35; }
+ul { margin: 22px 0 0; padding: 0 18px 0 0; font-size: 24px; }
 [dir="ltr"] ul { padding: 0 0 0 18px; }
 li { margin: 6px 0; }
 form { margin-top: 28px; }
@@ -49,18 +49,20 @@ form { margin-top: 28px; }
   gap: 8px;
   min-height: 180px;
   padding: 24px;
-  border: 2px dashed #9db7ef;
+  border: 2px dashed #9bb8c9;
   border-radius: 22px;
   background: var(--blue-soft);
   text-align: center;
   cursor: pointer;
 }
 .drop.over { border-color: var(--blue); background: #fff; }
-.drop strong { font-size: 22px; }
-.drop span { color: var(--muted); font-size: 16px; }
+.drop strong { font-size: 30px; font-weight: 400; }
+.drop span { color: var(--muted); font-size: 22px; }
 #file, .honey {
   position: absolute;
   width: 1px;
+  min-width: 0;
+  max-width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
@@ -76,15 +78,15 @@ button {
   border: 0;
   border-radius: 16px;
   padding: 16px 18px;
-  background: var(--sun);
-  color: var(--ink);
-  font: 700 20px Fredoka, Arial, sans-serif;
+  background: var(--blue);
+  color: white;
+  font: 400 28px var(--hand);
   cursor: pointer;
 }
 #go:disabled { display: none; }
 button:disabled { cursor: wait; opacity: .7; }
-.status, .warnings { margin-top: 18px; font-size: 18px; }
-.warnings { padding: 14px 16px; border-radius: 16px; background: #fff6d8; }
+.status, .warnings { margin-top: 18px; font-size: 24px; }
+.warnings { padding: 14px 16px; border-radius: 16px; background: var(--blue-soft); }
 .warnings p { margin: 8px 0; }
 a.download {
   display: block;
@@ -93,20 +95,20 @@ a.download {
   border-radius: 16px;
   background: var(--blue);
   color: white;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 400;
   text-align: center;
   text-decoration: none;
 }
-.note { margin: 22px 0 0; color: var(--muted); font-size: 15px; }
+.note { margin: 22px 0 0; color: var(--muted); font-size: 22px; }
 .error { color: #9a3412; }
 .contact {
   margin-top: 28px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
 }
-.contact h2 { margin: 0; font-size: 26px; }
-.contact p { margin: 8px 0 0; color: var(--muted); font-size: 18px; }
+.contact h2 { margin: 0; font-size: 36px; font-weight: 400; }
+.contact p { margin: 8px 0 0; color: var(--muted); font-size: 24px; }
 .fields { display: grid; gap: 10px; }
 .fields input, .fields textarea {
   width: 100%;
@@ -115,7 +117,7 @@ a.download {
   padding: 12px 14px;
   background: white;
   color: var(--ink);
-  font: 18px Fredoka, Arial, sans-serif;
+  font: 16px "Segoe UI", Arial, sans-serif;
 }
 .fields textarea { min-height: 120px; resize: vertical; }
 @media (max-width: 640px) {
@@ -129,15 +131,15 @@ a.download {
     border-radius: 0;
     box-shadow: none;
   }
-  h1 { font-size: 30px; }
-  .lede, ul, .status, .warnings, .contact p, .note { font-size: 16px; }
+  h1 { font-size: 40px; }
+  .lede, ul, .status, .warnings, .contact p, .note { font-size: 22px; }
   ul { margin-top: 16px; }
   form { margin-top: 20px; }
   .drop { min-height: 128px; padding: 16px; }
-  .drop strong, button, a.download { font-size: 18px; }
+  .drop strong, button, a.download { font-size: 26px; }
   button, a.download { padding: 14px 16px; }
   .contact { margin-top: 22px; }
-  .contact h2 { font-size: 22px; }
+  .contact h2 { font-size: 32px; }
   .fields input, .fields textarea { font-size: 16px; }
   .fields textarea { min-height: 96px; }
 }
