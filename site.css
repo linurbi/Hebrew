@@ -8,9 +8,11 @@
   --paper: #fffdf8;
 }
 * { box-sizing: border-box; }
+html { overflow-x: clip; }
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: clip;
   color: var(--ink);
   font-family: Fredoka, Arial, sans-serif;
   background:
@@ -56,7 +58,18 @@ form { margin-top: 28px; }
 .drop.over { border-color: var(--blue); background: #fff; }
 .drop strong { font-size: 22px; }
 .drop span { color: var(--muted); font-size: 16px; }
-#file, .honey { position: absolute; left: -9999px; }
+#file, .honey {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
 button {
   margin-top: 16px;
   width: 100%;
@@ -104,3 +117,17 @@ a.download {
   font: 18px Fredoka, Arial, sans-serif;
 }
 .fields textarea { min-height: 120px; resize: vertical; }
+@media (max-width: 640px) {
+  main {
+    width: auto;
+    margin: 12px;
+    padding: 18px 16px 22px;
+    border-radius: 20px;
+  }
+  h1 { font-size: 32px; }
+  .lede, ul, .status, .warnings, .contact p { font-size: 17px; }
+  .drop { min-height: 140px; padding: 18px; }
+  .drop strong, button, a.download { font-size: 18px; }
+  .contact h2 { font-size: 24px; }
+  .fields textarea { min-height: 96px; }
+}
