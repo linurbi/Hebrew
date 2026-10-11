@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hebrew Word Fix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<main>
+  <a class="lang" href="../">עברית</a>
+  <h1>Hebrew Word Fix</h1>
+  <p class="lede">ChatGPT exported a Word file and the Hebrew came out backwards? Choose the file and download a corrected one.</p>
+  <ul>
+    <li>Letters return to the right direction</li>
+    <li>Numbers, periods, and parentheses land in the right place</li>
+    <li>Bullets move to the right side</li>
+  </ul>
+  <form id="form">
+    <label class="drop" id="drop">
+      <strong>Choose a Word file</strong>
+      <span id="chosen">You can also drop the file here. docx only.</span>
+      <input id="file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    </label>
+    <button id="go" type="submit" disabled>Fix the file</button>
+  </form>
+  <div class="status" id="status" aria-live="polite"></div>
+  <p class="note">The fix happens in your browser. The file is not sent to the internet.</p>
+  <section class="contact">
+    <h2>Contact us</h2>
+    <p>Have a comment, or did something not work? Write to us.</p>
+    <form id="contact">
+      <div class="fields">
+        <input name="name" type="text" autocomplete="name" placeholder="Name (optional)">
+        <input name="email" type="email" autocomplete="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <input class="honey" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit">Send</button>
+    </form>
+    <div class="status" id="contact-status" aria-live="polite"></div>
+  </section>
+</main>
+<script>
+window.PAGE = {
+  chooseHint: 'You can also drop the file here. docx only.',
+  fixing: 'Fixing the file...',
+  ready: 'The file is ready.',
+  download: 'Download the corrected file',
+  review: 'A few lines are worth checking by eye:',
+  suffix: '-fixed.docx',
+  sending: 'Sending...',
+  sent: 'Message sent. Thank you.',
+  sendFailed: 'We could not send it. Please try again.',
+  errors: {
+    rejected: 'Choose a newer Word file, with the docx extension.',
+    'too-big': 'The file is too large. The limit is 20 MB.',
+    'not-word': 'This does not look like a valid Word file.',
+    'not-hebrew': 'The file has almost no Hebrew, so nothing was changed.',
+    failed: 'We could not fix this file. Make sure it is a normal Word file.',
+  },
+  reasons: {
+    lone: 'A single Hebrew letter stands alone. A word was split, so check it by hand.',
+    trailing: 'The line ends with a number. Its order may be reversed.',
+    repeated: 'The same number appears twice in a row.',
+  },
+};
+</script>
+<script src="../vendor/jszip.min.js"></script>
+<script src="../fix.js"></script>
+<script src="../stats.js"></script>
+<script src="../page.js"></script>
+</body>
+</html>

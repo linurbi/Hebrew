@@ -41,12 +41,6 @@
     'eastAsianLayout', 'specVanish', 'oMath', 'rPrChange',
   ];
 
-  const REASONS = {
-    lone: 'יש אות עברית בודדת. מילה נחתכה לשתיים, וכדאי לתקן אותה ידנית.',
-    trailing: 'השורה נגמרת במספר. יכול להיות שהסדר שלה הפוך.',
-    repeated: 'אותו מספר מופיע פעמיים ברצף.',
-  };
-
   function local(el) {
     const name = el.localName || el.nodeName || '';
     const cut = name.indexOf(':');
@@ -502,9 +496,9 @@
       const text = paraText(p).trim();
       if (!HEB.test(text)) continue;
       const reasons = [];
-      if (LONE_LETTER.test(text)) reasons.push(REASONS.lone);
-      if (TRAILING_NUMBER.test(text)) reasons.push(REASONS.trailing);
-      if (REPEATED_NUMBER.test(text)) reasons.push(REASONS.repeated);
+      if (LONE_LETTER.test(text)) reasons.push('lone');
+      if (TRAILING_NUMBER.test(text)) reasons.push('trailing');
+      if (REPEATED_NUMBER.test(text)) reasons.push('repeated');
       if (reasons.length) warnings.push({ text: text.slice(0, 180), reasons });
     }
     return warnings;
@@ -554,7 +548,7 @@
     };
     files['word/document.xml'] = await read('word/document.xml');
     if (!files['word/document.xml']) {
-      return { ok: false, error: 'הקובץ לא נראה כמו קובץ וורד תקין.' };
+      return { ok: false, error: 'not-word' };
     }
     for (const name of ['word/styles.xml', 'word/numbering.xml', '[Content_Types].xml', 'word/_rels/document.xml.rels']) {
       files[name] = await read(name);
@@ -567,7 +561,7 @@
     const body = child(doc.documentElement, 'body');
     const all = paraText(body);
     if (count(HEB, all) <= count(LAT, all)) {
-      return { ok: false, error: 'כמעט אין עברית בקובץ, אז לא שינינו אותו.' };
+      return { ok: false, error: 'not-hebrew' };
     }
     const styles = files['word/styles.xml'] ? parse(files['word/styles.xml']) : null;
     const ids = headingIds(styles);
