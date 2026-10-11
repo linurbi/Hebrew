@@ -20,8 +20,8 @@ body {
 }
 main {
   width: min(680px, calc(100% - 32px));
-  margin: 48px auto;
-  padding: 28px 32px 36px;
+  margin: 0 auto;
+  padding: 16px 28px 10px;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -29,25 +29,25 @@ main {
 }
 .lang {
   display: inline-block;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
   color: var(--blue);
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
 }
 h1, .lede, .drop span, .note { text-wrap: balance; }
-h1 { margin: 0 0 8px; font-size: 40px; line-height: 1.15; }
-.lede { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.45; }
-ul { margin: 22px 0 0; padding: 0 18px 0 0; font-size: 18px; }
+h1 { margin: 0 0 4px; font-size: 40px; line-height: 1.15; }
+.lede { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.35; }
+ul { margin: 12px 0 0; padding: 0 18px 0 0; font-size: 18px; }
 [dir="ltr"] ul { padding: 0 0 0 18px; }
-li { margin: 6px 0; }
-form { margin-top: 28px; }
+li { margin: 2px 0; }
+form { margin-top: 16px; }
 .drop {
   display: grid;
   place-items: center;
   gap: 8px;
-  min-height: 180px;
-  padding: 24px;
+  min-height: 100px;
+  padding: 16px;
   border: 2px dashed #9bb8c9;
   border-radius: 22px;
   background: var(--blue-soft);
@@ -72,11 +72,11 @@ form { margin-top: 28px; }
   border: 0;
 }
 button {
-  margin-top: 16px;
+  margin-top: 10px;
   width: 100%;
   border: 0;
   border-radius: 16px;
-  padding: 16px 18px;
+  padding: 12px 16px;
   background: var(--blue);
   color: white;
   font: 700 20px Fredoka, Arial, sans-serif;
@@ -84,7 +84,8 @@ button {
 }
 #go:disabled { display: none; }
 button:disabled { cursor: wait; opacity: .7; }
-.status, .warnings { margin-top: 18px; font-size: 18px; }
+.status, .warnings { margin-top: 14px; font-size: 18px; }
+.status:empty { margin-top: 0; }
 .warnings { padding: 14px 16px; border-radius: 16px; background: var(--blue-soft); }
 .warnings p { margin: 8px 0; }
 a.download {
@@ -99,26 +100,29 @@ a.download {
   text-align: center;
   text-decoration: none;
 }
-.note { margin: 22px 0 0; color: var(--muted); font-size: 15px; }
+.note { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
 .error { color: #9a3412; }
 .contact {
-  margin-top: 28px;
-  padding-top: 22px;
+  margin-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 .contact h2 { margin: 0; font-size: 26px; }
 .contact p { margin: 8px 0 0; color: var(--muted); font-size: 18px; }
-.fields { display: grid; gap: 10px; }
+.fields { display: grid; gap: 8px; }
 .fields input, .fields textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 12px 14px;
+  padding: 10px 12px;
   background: white;
   color: var(--ink);
   font: 18px Fredoka, Arial, sans-serif;
 }
-.fields textarea { min-height: 120px; resize: vertical; }
+.fields textarea { min-height: 72px; resize: vertical; }
+@media (min-width: 641px) {
+  body { padding: 12px 0; }
+}
 @media (max-width: 640px) {
   body { background-attachment: scroll; }
   main {
@@ -132,13 +136,13 @@ a.download {
   }
   h1 { font-size: 30px; }
   .lede, ul, .status, .warnings, .contact p, .note { font-size: 16px; }
-  ul { margin-top: 16px; }
-  form { margin-top: 20px; }
-  .drop { min-height: 128px; padding: 16px; }
+  ul { margin-top: 10px; }
+  form { margin-top: 14px; }
+  .drop { min-height: 96px; padding: 12px; }
   .drop strong, button, a.download { font-size: 18px; }
-  button, a.download { padding: 14px 16px; }
-  .contact { margin-top: 22px; }
+  button, a.download { padding: 12px 14px; }
+  .contact { margin-top: 14px; }
   .contact h2 { font-size: 22px; }
   .fields input, .fields textarea { font-size: 16px; }
-  .fields textarea { min-height: 96px; }
+  .fields textarea { min-height: 72px; }
 }
