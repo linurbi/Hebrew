@@ -6,11 +6,14 @@
 <title>Hebrew Word Fix</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site.css?v=13">
+<link rel="stylesheet" href="../site.css?v=14">
 </head>
 <body>
 <main>
-  <a class="lang" href="../">עברית</a>
+  <div class="top">
+    <a class="lang" href="../">עברית</a>
+    <p class="visits" id="visits" hidden><span id="visit-count"></span> visits</p>
+  </div>
   <h1>Hebrew Word Fix</h1>
   <p class="lede">ChatGPT exported a Word file and the Hebrew came out backwards? Choose the file and download a corrected one.</p>
   <ul>
@@ -70,7 +73,7 @@ window.PAGE = {
 </script>
 <script src="../vendor/jszip.min.js"></script>
 <script src="../fix.js?v=5"></script>
-<script src="../stats.js?v=5"></script>
+<script src="../stats.js?v=6"></script>
 <script src="../page.js?v=5"></script>
 </body>
 </html>
