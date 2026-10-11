@@ -5,14 +5,16 @@
   --blue: #2a6f8f;
   --blue-soft: #eef5f8;
   --paper: #fbfcfd;
+  --font: Fredoka, "Segoe UI", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
+html[lang="ar"] { --font: Cairo, "Segoe UI", Arial, sans-serif; }
 body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: Fredoka, Arial, sans-serif;
+  font-family: var(--font);
   background:
     radial-gradient(circle at 12% 8%, rgba(90, 160, 190, .28), transparent 34%),
     radial-gradient(circle at 90% 0%, rgba(168, 140, 120, .16), transparent 28%),
@@ -33,7 +35,7 @@ main {
   align-items: baseline;
   gap: 12px;
 }
-.lang {
+.langs { display: flex; gap: 14px; align-items: baseline; }
   display: inline-block;
   margin-bottom: 8px;
   color: var(--blue);
@@ -41,13 +43,6 @@ main {
   font-weight: 600;
   text-decoration: none;
 }
-.visits {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-size: 14px;
-  white-space: nowrap;
-}
-.visits[hidden] { display: none; }
 h1, .lede, .drop span, .note { text-wrap: balance; }
 h1 { margin: 0 0 4px; font-size: 40px; line-height: 1.15; }
 .lede { margin: 0; color: var(--muted); font-size: 20px; line-height: 1.35; }
@@ -92,7 +87,7 @@ button {
   padding: 12px 16px;
   background: var(--blue);
   color: white;
-  font: 700 20px Fredoka, Arial, sans-serif;
+  font: 700 20px var(--font);
   cursor: pointer;
 }
 #go:disabled { display: none; }
@@ -130,7 +125,7 @@ a.download {
   padding: 10px 12px;
   background: white;
   color: var(--ink);
-  font: 18px Fredoka, Arial, sans-serif;
+  font: 18px var(--font);
 }
 .fields textarea { min-height: 72px; resize: vertical; }
 @media (min-width: 641px) {

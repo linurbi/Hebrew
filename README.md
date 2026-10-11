@@ -18,15 +18,15 @@
 2. בוחרים קובץ `.docx`, או גוררים אותו אל הריבוע.
 3. מורידים את הקובץ המתוקן.
 
-אפשר גם באנגלית: [docfixes.com/en](https://docfixes.com/en/).
+אפשר גם באנגלית: [docfixes.com/en](https://docfixes.com/en/), ובערבית: [docfixes.com/ar](https://docfixes.com/ar/).
 
-קובץ גדול מ־20 מגה לא מתקבל. אם כמעט אין עברית בקובץ, הוא נשאר כמו שהוא.
+קובץ גדול מ־20 מגה לא מתקבל. אם כמעט אין עברית או ערבית בקובץ, הוא נשאר כמו שהוא.
 
 ---
 
 # Hebrew Word Fix
 
-A page that repairs Hebrew Word files when the text comes out backwards.
+A page that repairs Hebrew and Arabic Word files when the text comes out backwards.
 
 The site: [docfixes.com](https://docfixes.com)
 
@@ -38,4 +38,6 @@ The file is fixed in the browser. It is not uploaded.
 2. Choose a `.docx` file, or drop it on the box.
 3. Download the corrected file.
 
-Files larger than 20 MB are rejected. A file with almost no Hebrew is left unchanged.
+Files larger than 20 MB are rejected. A file with almost no Hebrew or Arabic is left unchanged.
+
+Arabic: [docfixes.com/ar](https://docfixes.com/ar/).

@@ -6,13 +6,15 @@
 <title>Hebrew Word Fix</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site.css?v=14">
+<link rel="stylesheet" href="../site.css?v=16">
 </head>
 <body>
 <main>
   <div class="top">
-    <a class="lang" href="../">עברית</a>
-    <p class="visits" id="visits" hidden><span id="visit-count"></span> visits</p>
+    <nav class="langs" aria-label="Language">
+      <a class="lang" href="../">עברית</a>
+      <a class="lang" href="../ar/">العربية</a>
+    </nav>
   </div>
   <h1>Hebrew Word Fix</h1>
   <p class="lede">ChatGPT exported a Word file and the Hebrew came out backwards? Choose the file and download a corrected one.</p>
@@ -61,7 +63,8 @@ window.PAGE = {
     rejected: 'Choose a newer Word file, with the docx extension.',
     'too-big': 'The file is too large. The limit is 20 MB.',
     'not-word': 'This does not look like a valid Word file.',
-    'not-hebrew': 'The file has almost no Hebrew, so nothing was changed.',
+    'not-hebrew': 'The file has almost no Hebrew or Arabic, so nothing was changed.',
+    'not-rtl': 'The file has almost no Hebrew or Arabic, so nothing was changed.',
     failed: 'We could not fix this file. Make sure it is a normal Word file.',
   },
   reasons: {
@@ -72,8 +75,8 @@ window.PAGE = {
 };
 </script>
 <script src="../vendor/jszip.min.js"></script>
-<script src="../fix.js?v=5"></script>
-<script src="../stats.js?v=6"></script>
+<script src="../fix.js?v=6"></script>
+<script src="../stats.js?v=7"></script>
 <script src="../page.js?v=5"></script>
 </body>
 </html>

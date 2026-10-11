@@ -6,13 +6,15 @@
 <title>מתקן העברית לוורד</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=14">
+<link rel="stylesheet" href="site.css?v=16">
 </head>
 <body>
 <main>
   <div class="top">
-    <a class="lang" href="en/">English</a>
-    <p class="visits" id="visits" hidden><span id="visit-count"></span> ביקורים</p>
+    <nav class="langs" aria-label="שפה">
+      <a class="lang" href="en/">English</a>
+      <a class="lang" href="ar/">العربية</a>
+    </nav>
   </div>
   <h1>מתקן העברית לוורד</h1>
   <p class="lede">צ׳אט ג׳יפיטי הוציא קובץ וורד והעברית יצאה הפוכה? בוחרים את הקובץ ומקבלים קובץ מתוקן.</p>
@@ -61,7 +63,8 @@ window.PAGE = {
     rejected: 'צריך קובץ וורד חדש, עם הסיומת docx.',
     'too-big': 'הקובץ גדול מדי. אפשר עד 20 מגה.',
     'not-word': 'הקובץ לא נראה כמו קובץ וורד תקין.',
-    'not-hebrew': 'כמעט אין עברית בקובץ, אז לא שינינו אותו.',
+    'not-hebrew': 'כמעט אין עברית או ערבית בקובץ, אז לא שינינו אותו.',
+    'not-rtl': 'כמעט אין עברית או ערבית בקובץ, אז לא שינינו אותו.',
     failed: 'לא הצלחנו לתקן את הקובץ. ודאו שזה קובץ וורד רגיל.',
   },
   reasons: {
@@ -72,8 +75,8 @@ window.PAGE = {
 };
 </script>
 <script src="vendor/jszip.min.js"></script>
-<script src="fix.js?v=5"></script>
-<script src="stats.js?v=6"></script>
+<script src="fix.js?v=6"></script>
+<script src="stats.js?v=7"></script>
 <script src="page.js?v=5"></script>
 </body>
 </html>

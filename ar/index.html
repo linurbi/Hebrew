@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إصلاح العربية في وورد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css?v=16">
+</head>
+<body>
+<main>
+  <div class="top">
+    <nav class="langs" aria-label="اللغة">
+      <a class="lang" href="../">עברית</a>
+      <a class="lang" href="../en/">English</a>
+    </nav>
+  </div>
+  <h1>إصلاح العربية في وورد</h1>
+  <p class="lede">أخرج ChatGPT ملف وورد وظهرت العربية مقلوبة؟ اختاروا الملف واحصلوا على ملف مُصحَّح.</p>
+  <ul>
+    <li>تعود الحروف إلى الاتجاه الصحيح</li>
+    <li>تعود الأرقام والنقاط والأقواس إلى مكانها</li>
+    <li>تنتقل علامات التعداد إلى اليمين</li>
+  </ul>
+  <form id="form">
+    <label class="drop" id="drop">
+      <strong>اختاروا ملف وورد</strong>
+      <span id="chosen">اضغطوا هنا، أو اسحبوا الملف</span>
+      <input id="file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    </label>
+    <button id="go" type="submit" disabled>أصلحوا الملف</button>
+  </form>
+  <div class="status" id="status" aria-live="polite"></div>
+  <p class="note">يتم الإصلاح في المتصفح. لا يُرسل الملف إلى الإنترنت.</p>
+  <section class="contact">
+    <h2>تواصلوا معنا</h2>
+    <p>لديكم ملاحظة، أو لم ينجح شيء؟ اكتبوا لنا.</p>
+    <form id="contact">
+      <div class="fields">
+        <input name="name" type="text" autocomplete="name" placeholder="الاسم (اختياري)">
+        <input name="email" type="email" autocomplete="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" placeholder="الرسالة" required></textarea>
+        <input class="honey" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit">إرسال</button>
+    </form>
+    <div class="status" id="contact-status" aria-live="polite"></div>
+  </section>
+</main>
+<script>
+window.PAGE = {
+  chooseHint: 'اضغطوا هنا، أو اسحبوا الملف',
+  fixing: 'نصلح الملف...',
+  ready: 'الملف جاهز.',
+  download: 'نزّلوا الملف المُصحَّح',
+  review: 'هناك أسطر تستحق المراجعة:',
+  suffix: '-مصحح.docx',
+  sending: 'جارٍ الإرسال...',
+  sent: 'أُرسلت الرسالة. شكرًا لكم.',
+  sendFailed: 'تعذر الإرسال. حاولوا مرة أخرى.',
+  errors: {
+    rejected: 'يلزم ملف وورد حديث بامتداد docx.',
+    'too-big': 'الملف كبير جدًا. الحد الأقصى 20 ميغابايت.',
+    'not-word': 'لا يبدو هذا الملف ملف وورد صالحًا.',
+    'not-rtl': 'لا يحتوي الملف على عربية أو عبرية كافية، لذلك لم نغيّره.',
+    failed: 'تعذر إصلاح الملف. تأكدوا أنه ملف وورد عادي.',
+  },
+  reasons: {
+    lone: 'يوجد حرف عبري منفرد. ربما انقسمت كلمة، ويُستحسن تصحيحها يدويًا.',
+    trailing: 'ينتهي السطر برقم. قد يكون ترتيبه معكوسًا.',
+    repeated: 'يظهر الرقم نفسه مرتين متتاليتين.',
+  },
+};
+</script>
+<script src="../vendor/jszip.min.js"></script>
+<script src="../fix.js?v=6"></script>
+<script src="../stats.js?v=7"></script>
+<script src="../page.js?v=5"></script>
+</body>
+</html>
