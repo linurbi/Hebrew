@@ -1,7 +1,7 @@
 /* Privacy-friendly counts. Set ENDPOINT to the GoatCounter count URL.
    Only event names are sent. File names and document contents are never sent. */
 (function () {
-  const ENDPOINT = '';
+  const ENDPOINT = 'https://docfixes.goatcounter.com/count';
   const queue = [];
 
   function emit(name) {
