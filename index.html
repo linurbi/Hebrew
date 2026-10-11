@@ -2,11 +2,11 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>מתקן העברית לוורד</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=4">
 </head>
 <body>
 <main>
@@ -21,7 +21,7 @@
   <form id="form">
     <label class="drop" id="drop">
       <strong>בחרו קובץ וורד</strong>
-      <span id="chosen">אפשר גם לגרור את הקובץ לכאן. רק קובץ docx.</span>
+      <span id="chosen">לחצו כאן, או גררו את הקובץ</span>
       <input id="file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
     </label>
     <button id="go" type="submit" disabled>תקנו את הקובץ</button>
@@ -45,7 +45,7 @@
 </main>
 <script>
 window.PAGE = {
-  chooseHint: 'אפשר גם לגרור את הקובץ לכאן. רק קובץ docx.',
+  chooseHint: 'לחצו כאן, או גררו את הקובץ',
   fixing: 'מתקנים את הקובץ...',
   ready: 'הקובץ מוכן.',
   download: 'הורידו את הקובץ המתוקן',

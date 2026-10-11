@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hebrew Word Fix</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../site.css?v=4">
 </head>
 <body>
 <main>
@@ -21,7 +21,7 @@
   <form id="form">
     <label class="drop" id="drop">
       <strong>Choose a Word file</strong>
-      <span id="chosen">You can also drop the file here. docx only.</span>
+      <span id="chosen">Tap here, or drop the file</span>
       <input id="file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
     </label>
     <button id="go" type="submit" disabled>Fix the file</button>
@@ -45,7 +45,7 @@
 </main>
 <script>
 window.PAGE = {
-  chooseHint: 'You can also drop the file here. docx only.',
+  chooseHint: 'Tap here, or drop the file',
   fixing: 'Fixing the file...',
   ready: 'The file is ready.',
   download: 'Download the corrected file',
