@@ -6,7 +6,7 @@
 <title>Hebrew Word Fix</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site.css?v=16">
+<link rel="stylesheet" href="../site.css?v=17">
 </head>
 <body>
 <main>
@@ -33,6 +33,15 @@
   </form>
   <div class="status" id="status" aria-live="polite"></div>
   <p class="note">The fix happens in your browser. The file is not sent to the internet.</p>
+  <section class="paste">
+    <h2>Or paste text</h2>
+    <p>Text from an email or anywhere else? No file needed.</p>
+    <textarea id="paste-input" placeholder="Paste the text here"></textarea>
+    <button id="paste-go" type="button" disabled>Fix the text</button>
+    <div class="status" id="paste-status" aria-live="polite"></div>
+    <div class="pasted" id="paste-out" hidden></div>
+    <button id="paste-copy" type="button" hidden>Copy the corrected text</button>
+  </section>
   <section class="contact">
     <h2>Contact us</h2>
     <p>Have a comment, or did something not work? Write to us.</p>
@@ -59,6 +68,9 @@ window.PAGE = {
   sending: 'Sending...',
   sent: 'Message sent. Thank you.',
   sendFailed: 'We could not send it. Please try again.',
+  pasteReady: 'The text is ready. You can copy it.',
+  copied: 'The corrected text is copied. Paste it into email or Word.',
+  copyFailed: 'We could not copy it automatically. Select the text and copy it by hand.',
   errors: {
     rejected: 'Choose a newer Word file, with the docx extension.',
     'too-big': 'The file is too large. The limit is 20 MB.',
@@ -76,7 +88,8 @@ window.PAGE = {
 </script>
 <script src="../vendor/jszip.min.js"></script>
 <script src="../fix.js?v=12"></script>
+<script src="../paste.js?v=1"></script>
 <script src="../stats.js?v=7"></script>
-<script src="../page.js?v=6"></script>
+<script src="../page.js?v=7"></script>
 </body>
 </html>

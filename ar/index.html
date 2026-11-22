@@ -6,7 +6,7 @@
 <title>إصلاح العربية في وورد</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../site.css?v=16">
+<link rel="stylesheet" href="../site.css?v=17">
 </head>
 <body>
 <main>
@@ -33,6 +33,15 @@
   </form>
   <div class="status" id="status" aria-live="polite"></div>
   <p class="note">يتم الإصلاح في المتصفح. لا يُرسل الملف إلى الإنترنت.</p>
+  <section class="paste">
+    <h2>أو الصقوا نصًا</h2>
+    <p>نص من بريد إلكتروني أو من مكان آخر؟ بدون ملف.</p>
+    <textarea id="paste-input" placeholder="الصقوا النص هنا"></textarea>
+    <button id="paste-go" type="button" disabled>أصلحوا النص</button>
+    <div class="status" id="paste-status" aria-live="polite"></div>
+    <div class="pasted" id="paste-out" hidden></div>
+    <button id="paste-copy" type="button" hidden>انسخوا النص المُصحَّح</button>
+  </section>
   <section class="contact">
     <h2>تواصلوا معنا</h2>
     <p>لديكم ملاحظة، أو لم ينجح شيء؟ اكتبوا لنا.</p>
@@ -59,6 +68,9 @@ window.PAGE = {
   sending: 'جارٍ الإرسال...',
   sent: 'أُرسلت الرسالة. شكرًا لكم.',
   sendFailed: 'تعذر الإرسال. حاولوا مرة أخرى.',
+  pasteReady: 'النص جاهز. يمكنكم نسخه.',
+  copied: 'تم نسخ النص المُصحَّح. يمكنكم لصقه في البريد أو في وورد.',
+  copyFailed: 'تعذر النسخ تلقائيًا. حدّدوا النص وانسخوه يدويًا.',
   errors: {
     rejected: 'يلزم ملف وورد حديث بامتداد docx.',
     'too-big': 'الملف كبير جدًا. الحد الأقصى 20 ميغابايت.',
@@ -75,7 +87,8 @@ window.PAGE = {
 </script>
 <script src="../vendor/jszip.min.js"></script>
 <script src="../fix.js?v=12"></script>
+<script src="../paste.js?v=1"></script>
 <script src="../stats.js?v=7"></script>
-<script src="../page.js?v=6"></script>
+<script src="../page.js?v=7"></script>
 </body>
 </html>

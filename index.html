@@ -6,7 +6,7 @@
 <title>מתקן העברית לוורד</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=16">
+<link rel="stylesheet" href="site.css?v=17">
 </head>
 <body>
 <main>
@@ -33,6 +33,15 @@
   </form>
   <div class="status" id="status" aria-live="polite"></div>
   <p class="note">התיקון קורה אצלכם בדפדפן. הקובץ לא נשלח לאינטרנט.</p>
+  <section class="paste">
+    <h2>או הדביקו טקסט</h2>
+    <p>טקסט מהמייל או מכל מקום אחר? בלי קובץ.</p>
+    <textarea id="paste-input" placeholder="הדביקו כאן את הטקסט"></textarea>
+    <button id="paste-go" type="button" disabled>תקנו את הטקסט</button>
+    <div class="status" id="paste-status" aria-live="polite"></div>
+    <div class="pasted" id="paste-out" hidden></div>
+    <button id="paste-copy" type="button" hidden>העתיקו את הטקסט המתוקן</button>
+  </section>
   <section class="contact">
     <h2>צרו קשר</h2>
     <p>יש הערה, או שמשהו לא עבד? כתבו לנו.</p>
@@ -59,6 +68,9 @@ window.PAGE = {
   sending: 'שולחים...',
   sent: 'ההודעה נשלחה. תודה.',
   sendFailed: 'לא הצלחנו לשלוח. נסו שוב.',
+  pasteReady: 'הטקסט מוכן. אפשר להעתיק אותו.',
+  copied: 'הטקסט המתוקן הועתק. אפשר להדביק אותו במייל או בוורד.',
+  copyFailed: 'לא הצלחנו להעתיק אוטומטית. סמנו את הטקסט והעתיקו ידנית.',
   errors: {
     rejected: 'צריך קובץ וורד חדש, עם הסיומת docx.',
     'too-big': 'הקובץ גדול מדי. אפשר עד 20 מגה.',
@@ -76,7 +88,8 @@ window.PAGE = {
 </script>
 <script src="vendor/jszip.min.js"></script>
 <script src="fix.js?v=12"></script>
+<script src="paste.js?v=1"></script>
 <script src="stats.js?v=7"></script>
-<script src="page.js?v=6"></script>
+<script src="page.js?v=7"></script>
 </body>
 </html>
